@@ -33,7 +33,7 @@ $auth_user = auth()->user();
                 </a>
             </li> --}}
             <li class="nav-item nav-profile">
-                <a href="{{ url('/') }}"
+                <a href="{{ url('/panel/clear-cache') }}"
                     class="align-self-center btn p-1 px-2 btn2-secondary text-white"><i
                         class="fa-solid fa-broom"></i> </a>
             </li>
@@ -42,7 +42,7 @@ $auth_user = auth()->user();
 
             <li class="nav-item nav-profile dropdown">
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown" aria-expanded="false">
-                <img src="{{ $auth_user ? $auth_user->avatar : Vite::asset(\App\Library\Enum::NO_AVATAR_PATH) }}"
+                <img src="{{ $auth_user ? $auth_user->getAvatar() : Vite::asset(\App\Library\Enum::NO_AVATAR_PATH) }}"
                         alt="{{ $auth_user?->full_name }}" />
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">

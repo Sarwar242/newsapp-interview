@@ -14,10 +14,7 @@
     <link rel="shortcut icon"
         href="{{ settings('favicon') ? asset(settings('favicon')) : Vite::asset(\App\Library\Enum::NO_IMAGE_PATH) }}">
     <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
-    <script>
-        window.auth_role_permissions = JSON.parse('{!! json_encode(config('
-            auth.role_permissions ')) !!}');
-    </script>
+
     <link rel="stylesheet" href="{{ asset('assets/css/congratulations.css') }}">
 </head>
 

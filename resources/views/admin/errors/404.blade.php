@@ -36,7 +36,7 @@
                         <a href="#" onclick="history.back()" class="btn btn2-secondary btn-lg">
                             <span class="glyphicon glyphicon-envelope"></span> Back
                         </a>
-                        <a href="{{ route('admin.home.dashboard') }}" class="btn btn2-secondary btn-lg">
+                        <a href="{{ route('home.dashboard') }}" class="btn btn2-secondary btn-lg">
                             <span class="glyphicon glyphicon-home"></span> Home
                         </a>
                     </div>

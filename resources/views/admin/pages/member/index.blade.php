@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title', 'Category')
+@section('title', 'Members')
 
 @section('content')
 
@@ -8,21 +8,20 @@
 
     <div class="content-header d-flex justify-content-between">
         <div class="d-block">
-            <h4 class="content-title">{{ strtoupper(__('Category' )) }}</h4>
+            <h4 class="content-title">{{ strtoupper(__('Members' )) }}</h4>
         </div>
     </div>
 
     <div class="card shadow-sm">
         <div class="card-body">
-
             <table id="dataTable" class="table table-bordered ticket-data-table">
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Name</th>
-                        <th>Parent Category</th>
-                        <th>Status</th>
-                        <th width="100px">Action</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,5 +39,5 @@
 @include('admin.assets.dt-buttons-export')
 
 @push('scripts')
-@vite('resources/admin_assets/js/pages/category/index.js')
+@vite('resources/admin_assets/js/pages/member/index.js')
 @endpush

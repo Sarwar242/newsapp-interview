@@ -4,7 +4,7 @@ namespace App\Http\Requests\Article;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateArticleRequest extends FormRequest
+class CommentStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,13 +23,9 @@ class UpdateArticleRequest extends FormRequest
      */
     public function rules()
     {
-
         return [
-            'title'          => ['required', 'string', 'max:255'],
-            'category_id'    => ['required'],
-            'article'        => ['nullable', 'string'],
-            'thumb'          => ['nullable', 'file', 'max:3000'],
-            'picture'        => ['nullable', 'file', 'max:3000'],
+            'comment'        => ['required', 'string', 'max:855'],
+            'article_id'     => ['required'],
         ];
     }
 }

@@ -23,8 +23,8 @@ class StoreArticleRequest extends FormRequest
             'title'          => ['required', 'string', 'max:255'],
             'category_id'    => ['required'],
             'article'        => ['nullable', 'string'],
-            'thumb'          => ['nullable', 'file', 'max:2000'],
-            'picture'        => ['nullable', 'file', 'max:2000'],
+            'thumb'          => ['nullable', 'file', 'max:3000'],
+            'picture'        => ['nullable', 'file', 'max:3000'],
         ];
     }
 }

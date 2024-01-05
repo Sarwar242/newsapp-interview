@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\Admin\Auth\RegisterController;
 use App\Http\Controllers\Admin\BackendController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Public\CommentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Public\HomeController;
 
@@ -22,6 +23,10 @@ use App\Http\Controllers\Public\HomeController;
 Route::name('public.')->as('public.')->namespace('App\Http\Controllers\Public')->group(function () {
 
     Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/article/{article}', [HomeController::class, 'article'])->name('article');
+    Route::get('/category/{category}', [HomeController::class, 'byCategory'])->name('category');
+    Route::post('/comment', [CommentController::class, 'store'])->name('comment');
+    Route::post('/comment/delete/{comment}', [CommentController::class, 'destroy'])->name('comment.delete');
     Route::get('/attendance', [HomeController::class, 'attendance'])->name('sign.in');
     Route::get('/attendance/{employee}', [HomeController::class, 'show']);
 });
@@ -33,7 +38,8 @@ Route::post('/login', [LoginController::class , 'login'])->name('login.post');
 Route::group(['middleware' => 'auth'], function () {
     Route::any('/logout', [LoginController::class, 'logout'])->name('logout');
     Route::get('/dashboard', [BackendController::class, 'index'])->name('home.dashboard');
-    Route::get('/profile', [BackendController::class, 'profile'])->name('profile.index');
+    Route::get('/panel/clear-cache', [BackendController::class, 'clearCache'])->name('panel.clear_cache');
+    Route::get('/panel/profile', [BackendController::class, 'profile'])->name('profile.index');
     Route::get('/users', [BackendController::class, 'users'])->name('users');
     Route::get('/panel/articles', [ArticleController::class, 'articles'])->name('panel.news.articles');
     Route::get('/panel/news/create', [ArticleController::class, 'create'])->name('panel.news.articles.create');
@@ -50,7 +56,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/panel/category/update/{category}', [CategoryController::class, 'update']);
     Route::post('/panel/category/delete/{category}', [CategoryController::class, 'destroy'])->name('panel.category.delete');
     Route::post('/panel/category/status-change/{category}', [CategoryController::class, 'changeStatus'])->name('panel.category.change_status');
-    
+
     Route::get('/panel/my-articles', [ArticleController::class, 'myArticles'])->name('panel.user.articles');
     Route::get('/panel/comments', [ArticleController::class, 'comments'])->name('panel.news.comments');
 });

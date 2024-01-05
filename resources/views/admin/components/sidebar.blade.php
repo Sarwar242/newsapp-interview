@@ -25,17 +25,12 @@ use App\Library\Helper;
             </a>
             <div class="collapse" id="news">
                 <ul class="nav flex-column sub-menu">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('panel.news.articles') }}">All Articles</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('panel.categories') }}">Categories</a>
-                        </li>
-
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('panel.news.comments') }}">Comments</a>
+                        <a class="nav-link" href="{{ route('panel.news.articles') }}">All Articles</a>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('panel.categories') }}">Categories</a>
+                    </li>
                 </ul>
             </div>
         </li>

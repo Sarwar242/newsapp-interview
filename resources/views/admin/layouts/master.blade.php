@@ -11,12 +11,9 @@
     <title>@yield('title')</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="base-url" content="{{ url('/') }}">
-    <link rel="shortcut icon" href="{{ settings('favicon') ? asset(settings('favicon')) : Vite::asset(\App\Library\Enum::NO_IMAGE_PATH) }}">
+    <link rel="shortcut icon" href="{{  Vite::asset(\App\Library\Enum::LOGO2_PATH) }}">
     @vite('resources/admin_assets/sass/app.scss')
     <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
-    <!-- <script>
-        window.auth_role_permissions = JSON.parse('{!! json_encode(config('auth.role_permissions')) !!}');
-    </script> -->
     @stack('styles')
 </head>
 

@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Traits\ApiResponse;
 use App\Library\Services\UserService;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Validation\ValidationException;
 
 class BackendController extends Controller
@@ -27,6 +28,11 @@ class BackendController extends Controller
         return view('admin.pages.home.dashboard');
     }
 
+    public function profile()
+    {
+        return view('admin.pages.member.profile');
+    }
+
 
     public function users(Request $request)
     {
@@ -35,5 +41,13 @@ class BackendController extends Controller
         }
 
         return view('admin.pages.member.index');
+    }
+
+    public function clearCache()
+    {
+        Artisan::call('cache:clear');
+        Artisan::call('optimize:clear');
+
+        return back()->with('success', "Cache cleared successfully!");
     }
 }

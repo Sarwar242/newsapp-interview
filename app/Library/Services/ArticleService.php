@@ -72,11 +72,11 @@ class ArticleService extends BaseService
         try {
             $data['author_id'] = auth()->id();
             if (isset($data['thumb'])) {
-                $data['thumb'] = Helper::uploadImage($data['thumb'], Enum::USER_ARTICLE_THUMB_DIR, 200, 200);
+                $data['thumb'] = Helper::uploadImage($data['thumb'], Enum::USER_ARTICLE_THUMB_DIR, 500);
             }
 
             if (isset($data['picture'])) {
-                $data['picture'] = Helper::uploadImage($data['picture'], Enum::USER_ARTICLE_DIR, 200, 200);
+                $data['picture'] = Helper::uploadImage($data['picture'], Enum::USER_ARTICLE_DIR, 1000);
             }
 
             $this->data = Article::create($data);
@@ -96,12 +96,12 @@ class ArticleService extends BaseService
 
             if (isset($data['thumb'])) {
                 deleteFile($article->thumb);
-                $data['thumb'] = Helper::uploadImage($data['thumb'], Enum::USER_ARTICLE_THUMB_DIR, 200, 200);
+                $data['thumb'] = Helper::uploadImage($data['thumb'], Enum::USER_ARTICLE_THUMB_DIR, 500);
             }
 
             if (isset($data['picture'])) {
                 deleteFile($article->picture);
-                $data['picture'] = Helper::uploadImage($data['picture'], Enum::USER_ARTICLE_DIR, 200, 200);
+                $data['picture'] = Helper::uploadImage($data['picture'], Enum::USER_ARTICLE_DIR, 1000);
             }
             $this->data = $article->update($data);
 

@@ -60,7 +60,7 @@
     <div class="content-wrapper">
         <div class="content-header d-flex justify-content-between">
             <div class="d-block">
-                <h4 class="content-title text-blod" style="font-size: 20px; font-weight:900;">DASHBOARD </h4>
+                <h4 class="content-title text-blod" style="font-size: 20px; font-weight:900;">DASHBOARD</h4>
             </div>
 
             <div class="d-flex justify-content-between text-right web-filter-btn">
@@ -190,18 +190,7 @@
 
                 </div>
             </div>
-
-            <!-- <div class="col-lg-12 col-md-12 stretch-card mt-4">
-                <div class="card admin-dashboard-card-design mt-2 mb-2">
-                    <div class="client-card-title d-block text-center text-white background-primary pb-3 title-border">
-                        <span><b>Referral Analytics Chart</b></span>
-                    </div>
-                    <div id="referralChart" style="width: 100%;"></div>
-                </div>
-            </div> -->
-
         </div>
-
     </div>
 @stop
 
@@ -233,70 +222,5 @@
             });
         });
         // End Date Range picker
-
-        // Monthly service/referral line charts
-        let date =  new Date().getFullYear();
-
-        google.charts.load('current', { 'packages': ['corechart',  'line'] });
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-
-            var data = new google.visualization.DataTable();
-            data.addColumn('string', 'X');
-            data.addColumn('number', 'Pending');
-            data.addColumn('number', 'Enrolled');
-            data.addColumn('number', 'Discharge');
-            data.addColumn('number', 'Declined');
-
-            var options = {
-                chartArea: {
-                    left: 70,
-                    right: 170,
-                    top: 20,
-                    bottom: 70,
-                },
-                height: 600,
-                animation: {
-                    startup: true,
-                    duration: 2000,
-                    easing: 'out',
-                },
-                curveType: 'function',
-                pointSize: 20,
-                backgroundColor: 'transparent',
-
-                hAxis: {
-                    gridlines: { color: '#0d9953' }
-                },
-                vAxis: {
-                    minValue: 0,
-                    gridlines: {
-                        color: '#bde4d1',
-                    }
-                },
-                series: {
-                    0: {
-                        color: '#ff9900',
-                        pointShape: 'circle'
-                    },
-                    1: {
-                        color: '#109618',
-                        pointShape: 'square'
-                    },
-                    2: {
-                        color: '#3366cc',
-                        pointShape: 'diamond'
-                    },
-                    3: {
-                        color: '#dc3912',
-                        pointShape: 'polygon'
-                    },
-                },
-            };
-
-            var chart = new google.visualization.LineChart(document.getElementById('referralChart'));
-            chart.draw(data, options);
-        }
     </script>
 @endpush

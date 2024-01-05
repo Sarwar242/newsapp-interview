@@ -116,4 +116,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Article::class)->withTimestamps();
     }
+
+    public function comments(): BelongsToMany
+    {
+        return $this->belongsToMany(Comment::class)->withTimestamps();
+    }
 }
