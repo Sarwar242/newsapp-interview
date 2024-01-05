@@ -46,7 +46,7 @@
 
 You can now access the server at http://localhost:8000
 
-**TL;DR command list**
+**TLDR command list**
 
     git clone https://github.com/Sarwar242/newsapp-interview.git
     cd newsapp-interview
@@ -62,8 +62,6 @@ You can now access the server at http://localhost:8000
     npm run dev
 
 ## Database seeding
-
-**Populate the database with seed data with relationships which includes users, roles, permissions, configs, email templates, notifications and role of honor. This can help you to quickly start testing the api or couple a frontend and start using it with ready content.**
 
 Open the DatabaseSeeder and set the property values as per your requirement
 
